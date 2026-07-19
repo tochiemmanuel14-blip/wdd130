@@ -1,9 +1,9 @@
 :root {
     --primary-color: #1d4ed8;
     --secondary-color: #0ea5e9;
-    --accent2-color: #333;
-    --heading-front: Georgia, serif;
-    --body-font: arial, sans-serif;
+    --accent2-color: #333333;
+    --heading-font: Georgia, serif;
+    --body-font: Arial, sans-serif;
 }
 
 * {
@@ -14,7 +14,7 @@
 
 body {
     font-family: var(--body-font);
-    color: vary(--accent1-color);
+    color: var(--accent2-color);
 }
 
 header,
@@ -31,18 +31,28 @@ header {
     padding: 16px;
 }
 
+header img {
+    width: 150px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
 nav a {
-    padding: 10px;
     text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
 h1,
 h2 {
-    font-family: vary(--heading-font);
+    font-family: var(--heading-font);
     color: var(--primary-color);
 }
 
-nav,
 p,
 section,
 article {
@@ -57,7 +67,17 @@ article {
 .hero img {
     display: block;
     width: 100%;
-    height: auto
+    height: auto;
+}
+
+.hero h1 {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
 }
 
 .hero article {
@@ -65,13 +85,30 @@ article {
     bottom: 20px;
     left: 20px;
     right: 20px;
-    background: rgba(225, 255, 255, .8);
-
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
 }
 
 .hero article img {
     float: right;
     width: 125px;
+    margin-left: 15px;
+}
+
+figure {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+figure img {
+    width: 150px;
+    height: auto;
+}
+
+figcaption {
+    margin-top: 5px;
+    font-size: 0.9rem;
 }
 
 .socialmedia a {
@@ -87,4 +124,5 @@ footer {
 
 footer img {
     width: 32px;
+    height: auto;
 }
