@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 
-/* 2. CSS Variables in :root */
+/* 2. CSS Variables in :root - now ALL 5 are used */
 :root {
     --primary-color: #0A4D68;
     --secondary-color: #088395;
@@ -16,23 +16,24 @@
     --background-color: #FFFFFF;
 }
 
-/* 3. Remove underlines from social media links */
-.sociallinks a {
+/* 3. Remove underlines from social media links - class name fixed */
+.socialmedia a {
     text-decoration: none;
 }
 
-/* Also remove underlines from nav links - audit checks this */
+/* Also remove underlines from nav links */
 nav a {
     text-decoration: none;
+    color: var(--background-color);
+    font-weight: bold;
 }
 
-/* ===== YOUR LAYOUT CODE - UNCHANGED ===== */
+/* ===== YOUR LAYOUT CODE ===== */
 
 /* 1. HEADER = GRID */
 header {
     display: grid;
     grid-template-columns: 120px 1fr;
-    /* logo | nav */
     align-items: center;
     background-color: var(--primary-color);
     padding: 10px 20px;
@@ -49,16 +50,48 @@ nav {
     justify-content: space-around;
 }
 
-nav a {
+/* 3. HERO POSITIONING - THIS WAS MISSING */
+.hero {
+    position: relative;
     color: var(--background-color);
-    font-weight: bold;
 }
 
-/* 3. HISTORY = 3 COLUMN GRID */
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.hero h1 {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(10, 77, 104, 0.8);
+    padding: 10px;
+}
+
+.hero article {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background-color: rgba(8, 131, 149, 0.85);
+    padding: 1rem;
+}
+
+/* Float image inside hero article */
+.hero article img {
+    float: right;
+    width: 125px;
+    margin-left: 1rem;
+}
+
+/* 4. HISTORY = 3 COLUMN GRID */
 .history {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    /* text | image | text */
     gap: 20px;
     align-items: center;
     padding: 20px;
@@ -67,17 +100,17 @@ nav a {
 
 .history h2 {
     grid-column: 1/4;
-    /* span all columns */
     text-align: center;
     color: var(--primary-color);
 }
 
-/* 4. ADVENTURES = 5 ACROSS WITH FLEX */
+/* 5. ADVENTURES = 5 ACROSS WITH FLEX - now using accent color */
 .adventures {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 20px;
+    background-color: var(--accent-color);
 }
 
 .adventures h2 {
@@ -96,7 +129,7 @@ nav a {
     height: auto;
 }
 
-/* 5. FOOTER = FLEX RIGHT */
+/* 6. FOOTER = FLEX RIGHT - class name fixed */
 footer {
     display: flex;
     justify-content: space-between;
@@ -106,12 +139,12 @@ footer {
     padding: 20px;
 }
 
-.sociallinks {
+.socialmedia {
     display: flex;
     gap: 10px;
 }
 
-.sociallinks img {
+.socialmedia img {
     width: 32px;
     height: 32px;
 }
