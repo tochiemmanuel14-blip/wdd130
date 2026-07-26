@@ -8,7 +8,8 @@
 /* CSS Variables */
 :root {
     --primary-color: #0A4D68;
-    --secondary-color: #088395;
+    --secondary-color: #07788A;
+    /* Slightly darker for better contrast */
     --accent-color: #05BFDB;
     --text-color: #333333;
     --background-color: #FFFFFF;
